@@ -68,3 +68,6 @@ CLASS zcl_itab_basics IMPLEMENTATION.
   ENDMETHOD.
 
 ENDCLASS.
+
+
+
