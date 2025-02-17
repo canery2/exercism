@@ -1,8 +1,19 @@
-data: lv_var type char30 value 'This is a test string'.
+*&---------------------------------------------------------------------*
+*& Report  ZCYP_DYNAMIC_PROGRAM
+*&
+*&---------------------------------------------------------------------*
+*&
+*&
+*&---------------------------------------------------------------------*
+report zcyp_dynamic_program.
 
-field-symbols: <fs_any> type any.
-assign lv_var+7(7) to <fs_any>.
+data: lr_a type ref to i,
+      lv_a type i value 90.
 
-write <fs_any>.
+get reference of lv_a into lr_a.
 
-break-point.
+write lr_a->*.
+
+lr_a->* = 25.
+
+write lv_a.
