@@ -1,4 +1,4 @@
-
+report zcyp_dynamic_program.
 class zcl_utilities definition.
     public section.
       class-methods: generic_data importing fs_data type ref to data.
@@ -6,9 +6,23 @@ class zcl_utilities definition.
   
   class zcl_utilities implementation.
     method generic_data.
-      field-symbols <fs_table> type any table.
-      assign fs_data->* to <fs_table>.
-  
+        field symbols: <fs_table> type any table,
+                       <fs_line> type any,
+                       <fs_field> type simple.
+
+        assign im_table->* to <fs_table>.
+
+        loop at <fs_table> assigning <fs_line>.
+            do.
+                assign component sy-index of STRUCTURE <fs_line> to <fs_field>.
+                if sy-subrc eq 0.
+                    write : / <fs_field>.
+                else.
+                    exit.
+                endif.
+            enddo.
+        endloop.
+
     endmethod.
   endclass.
   
