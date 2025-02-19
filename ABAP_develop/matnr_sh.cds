@@ -19,7 +19,7 @@ define view zcdsv_matnr_sh111  as select distinct from  mara as mm
         labst      ,
          lgort,
         dismm                  
-     
+      
   } 
 //  group by mm.matnr, mard.werks, mtart, zz_mlz_um
 // group by mm.matnr,werks,mtart,zz_mlz_um, lgort
