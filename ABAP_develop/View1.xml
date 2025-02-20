@@ -1,0 +1,19 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}"> 
+     <content>
+            <Button id="_IDGenButton" text="Tıkla!" press="onButtonPress" />
+        
+        </content>
+
+        <content>
+            <List id="_IDGenList1" items="{week>/days}">  <!-- "week" modeli içindeki "days" array'ine bağlandık -->
+                <StandardListItem id="_IDGenStandardListItem" 
+                                  title="{week>day}" 
+                                  description="{week>task}"
+                                  press="onItemPress" />
+            </List>
+        </content>
+    </Page>
+</mvc:View>
